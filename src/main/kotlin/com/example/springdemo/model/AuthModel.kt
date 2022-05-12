@@ -1,11 +1,12 @@
 package com.example.springdemo.model
 
-import javax.persistence.*
+import java.util.*
+import javax.persistence.Entity
+import javax.persistence.Table
 
 @Entity
 @Table(name = "jwt_auth")
-open class AuthModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    open val id: Long = 0
+open class AuthModel : BaseModel() {
+    open val userId: Long = 0
+    open val expiredDate: Date = Date();
 }
